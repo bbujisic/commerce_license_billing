@@ -25,7 +25,7 @@ function commerce_license_billing_views_default_views() {
   $handler->display->display_options['title'] = 'Billing dashboard';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'administer licenses';
+  $handler->display->display_options['access']['perm'] = 'administer commerce_license entities';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';

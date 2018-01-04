@@ -25,7 +25,7 @@ class CommerceLicenseBillingCycleTypeUIController extends EntityDefaultUIControl
     $items[$this->path]['type'] = MENU_LOCAL_TASK;
     // The listing should use the admin permission, not entity_access('view').
     unset($items[$this->path]['access callback']);
-    $items[$this->path]['access arguments'] = array('administer licenses');
+    $items[$this->path]['access arguments'] = array('administer commerce_license entities');
     // Replace the title callback of pages.
     $title_callback = 'commerce_license_billing_cycle_type_get_page_title';
     $items[$this->path . '/add']['title callback'] = $title_callback;
