@@ -187,7 +187,7 @@ function commerce_license_billing_commerce_line_item_type_info() {
  *   TRUE to grant access, FALSE otherwise.
  */
 function commerce_license_billing_cycle_access($op, $entity = NULL, $account = NULL) {
-  if ($op === 'view' && user_access('administer licenses', $account)) {
+  if ($op === 'view' && user_access('administer commerce_license entities', $account)) {
     return TRUE;
   }
 
@@ -215,12 +215,12 @@ function commerce_license_billing_cycle_type_access($op, $cycle_type = NULL, $ac
     // This allows billing cycle types to always show up in the
     // cl_billing_cycle_type entityreference field on the product edit form.
     // Otherwise a recurring product couldn't be managed without the
-    // "administer licenses" permission.
+    // "administer commerce_license entities" permission.
     return TRUE;
   }
   else {
     $engines = commerce_license_billing_get_plugins('billing_cycle_engine');
-    return user_access('administer licenses', $account) && !empty($engines);
+    return user_access('administer commerce_license entities', $account) && !empty($engines);
   }
 }
 
